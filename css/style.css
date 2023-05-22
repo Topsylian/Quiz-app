@@ -45,7 +45,7 @@ body {
 header {
 	width: 100%;
 	padding: 2% 2%;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 }
 
 header > h1 > span {
@@ -55,7 +55,7 @@ header > h1 > span {
 aside {
 	width: 100%;
 	padding: 2% 2%;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 }
 
 aside > h2 {
@@ -200,7 +200,7 @@ label {
 	top: 0;
 	left: 0;
 	background: var(--accent-two);
-	transition: 500ms ease-in-out;
+	transition: 850ms ease-in-out;
 	z-index: -1;
 }
 
@@ -218,6 +218,6 @@ label {
 	top: 0;
 	right: 0;
 	background: var(--accent-two);
-	transition: 500ms ease-in-out;
+	transition: 850ms ease-in-out;
 	z-index: -1;
 }
