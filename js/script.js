@@ -14,8 +14,14 @@ window.addEventListener("load", () => {
 })
 */
 
-registerBtn.addEventListener("pointerover", () => {
-		registerBtn.classList.add("active");
+registerBtn.addEventListener("click", () => {
+		if (registerBtn.getAttribute("class") === "register-btn") {
+			registerBtn.classList.add("active");
+			registerBtn.setAttribute("class", "active");
+		} else {
+			registerBtn.classList.remove("active");
+			registerBtn.setAttribute("class", "register-btn");
+		}
 });
 
 
