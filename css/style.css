@@ -177,7 +177,47 @@ label {
 	justify-content: center;
 }
 
-.btn-wrapper > button:hover {
-	background-color: var(--primary);
-	border: 1px solid var(--secondary);
+.btn-wrapper > button {
+	background: transparent;
+	position: relative;
+	transition: 500ms ease-in-out;
+	overflow-x: hidden;
+	z-index: 1;
+	border: 1px solid var(--accent);
+}
+
+.btn-wrapper button.active:hover::before {
+	transform: translateX(0%);
+	background: var(--accent-two);
+}
+
+.btn-wrapper button::before {
+	content: '';
+	width: 50%;
+	height: 100%;
+	transform: translateX(-150%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: var(--accent-two);
+	transition: 500ms ease-in-out;
+	z-index: -1;
+}
+
+.btn-wrapper button.active:hover::after {
+	transform: translateX(0%);
+	background: var(--accent-two);
+}
+
+.btn-wrapper button::after {
+	content: '';
+	width: 50%;
+	height: 100%;
+	transform: translateX(150%);
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: var(--accent-two);
+	transition: 500ms ease-in-out;
+	z-index: -1;
 }
