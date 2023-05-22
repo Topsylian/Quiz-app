@@ -150,17 +150,16 @@ label {
 	height: 100%;
 	padding: 10px 15px;
 	font-size: 1.6rem;
-	border-radius: 10px;
+	border-radius: 0.5rem;
 	border: 3px solid transparent;
 	outline: transparent;
-	animation: borderAnimation 2000ms infinite linear;
 	background-color: var(--accent);
 	transition: all 950ms ease-in-out;
 	color: var(--primary);
 }
 
-.input-text:focus .input-text-border{
-	background-color: var(--accent);
+.input-text:focus {
+	animation: borderAnimation 2000ms infinite linear;
 }
 
 .input-error {
