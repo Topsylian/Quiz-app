@@ -1,0 +1,183 @@
+@import url(./animation.css);
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  list-style-type: none;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --secondary: #ffffff;
+  --accent: #ece5dd;
+  --primary: #4f5255;
+  --text: #4f5255a0;
+  --accent-two: #e80d82;
+  --aclonica: "Aclonica", sans-serif;
+  --cinzel: "Cinzel", serif;
+  --inter: "Inter", sans-serif;
+  --open-sans: "Open Sans", sans-serif;
+  --poppins: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+	opacity: 1;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: var(--inter);
+  overflow-x: hidden;
+  font-size: 1.6rem;
+  font-family: "";
+  cursor: pointer;
+}
+
+header {
+	width: 100%;
+	padding: 2% 2%;
+	margin-bottom: 100px;
+}
+
+header > h1 > span {
+	color: var(--accent-two);
+}
+
+aside {
+	width: 100%;
+	padding: 2% 2%;
+	margin-bottom: 50px;
+}
+
+aside > h2 {
+	font-size: 3.0rem;
+	color: var(--secondary);
+	text-shadow: 1px -1px 5px var(--primary),  0px 2px 2px var(--accent-two);
+}
+
+aside > p {
+	font-size: 1.8rem;
+	color: var(--secondary);
+	font-family: var(--inter);
+}
+
+h1 {
+  font-size: 3.5rem;
+	font-family: var(--aclonica);
+}
+
+h2 {
+	font-family: var(--inter);
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+button {
+	padding: 15px 15px;
+	font-size: 1.6rem;
+	font-weight: 600;
+	border: transparent;
+	outline: transparent;
+	border-radius: 0.5rem;
+	background-color: var(--accent-two);
+	color: var(--secondary);
+	font-family: var(--poppins);
+	transition: 500ms ease-in-out;
+}
+
+.container {
+  padding: 2% 2%;
+	cursor: pointer;
+}
+
+form {
+	cursor: pointer;
+	margin-bottom: 50px;
+}
+
+.form-wrapper {
+	width: 100%;
+	gap: 25px;
+	display: flex;
+	flex-direction: column;
+}
+
+.input-box {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.input-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+label {
+	font-family: var(--cinzel);
+}
+
+/*
+.input-text-border {
+	width: 100%;
+	height: 40px;
+	padding: 2px 3px 3px;
+	background: linear-gradient(90deg, var(--accent-two), var(--primary), var(--text), orange);
+	border-radius: 0.5rem;
+	transition: 500ms ease-in-out;
+}
+*/
+
+
+
+.input-text {
+	width: 100%;
+	height: 100%;
+	padding: 10px 15px;
+	font-size: 1.6rem;
+	border-radius: 10px;
+	border: 5px solid transparent;
+	outline: transparent;
+	animation: borderAnimation 2000ms infinite linear;
+	border-radius: 0.5rem;
+	background-color: var(--accent);
+	transition: all 950ms ease-in-out;
+	color: var(--primary);
+}
+
+.input-text:focus .input-text-border{
+	background-color: var(--accent);
+}
+
+.input-error {
+	display: flex;
+	font-size: 1.2rem;
+	color: var(--accent-two);
+	justify-content: flex-end;
+	font-family: var(--open-sans);
+}
+
+.btn-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.btn-wrapper > button:hover {
+	background-color: var(--primary);
+	border: 1px solid var(--secondary);
+}

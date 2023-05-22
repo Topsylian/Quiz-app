@@ -1,0 +1,27 @@
+@keyframes borderAnimation {
+	0% {
+		border-image: linear-gradient(60deg,  var(--accent-two), var(--accent), orange) 10 stretch;
+	}
+
+	20% {
+		border-image: linear-gradient(120deg,  var(--accent), orange, var(--accent-two)) 10 stretch;
+	}
+
+
+	40% {
+		border-image: linear-gradient(180deg, orange, var(--accent-two), var(--accent)) 10 stretch;
+	}
+
+	60% {
+		border-image: linear-gradient(240deg,  var(--accent-two), var(--accent), orange) 10 stretch;
+	}
+
+	80% {
+		border-image: linear-gradient(300deg,  var(--accent), orange, var(--accent-two)) 10 stretch;
+	}
+
+
+	100% {
+		border-image: linear-gradient(360deg, orange, var(--accent-two), var(--accent)) 10 stretch;
+	}
+}
