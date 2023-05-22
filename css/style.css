@@ -185,16 +185,16 @@ label {
 	border: 1px solid var(--accent);
 }
 
-.btn-wrapper button.active::before {
+.btn-wrapper button.active:hover::before {
 	transform: translate(0%);
 	background: var(--accent-two);
 }
-
+/*
 .btn-wrapper button:hover::before {
 	transform: translate(0%);
 	background: var(--accent-two);
 }
-
+*/
 .btn-wrapper button::before {
 	content: '';
 	width: 50%;
@@ -213,7 +213,7 @@ label {
 	background: var(--accent-two);
 }
 
-.btn-wrapper button.active::after {
+.btn-wrapper button.active:hover::after {
 	transform: translateX(0%) translateY(0%);
 	background: var(--accent-two);
 }
