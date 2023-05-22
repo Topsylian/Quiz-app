@@ -181,13 +181,18 @@ label {
 	background: transparent;
 	position: relative;
 	transition: 500ms ease-in-out;
-	overflow-x: hidden;
+	overflow: hidden;
 	z-index: 1;
 	border: 1px solid var(--accent);
 }
 
-.btn-wrapper button.active:hover::before {
-	transform: translateX(0%);
+.btn-wrapper button.active::before {
+	transform: translate(0%);
+	background: var(--accent-two);
+}
+
+.btn-wrapper button:hover::before {
+	transform: translate(0%);
 	background: var(--accent-two);
 }
 
@@ -195,7 +200,7 @@ label {
 	content: '';
 	width: 50%;
 	height: 100%;
-	transform: translateX(-150%);
+	transform: translateX(-150%) translateY(-150%);
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -204,8 +209,13 @@ label {
 	z-index: -1;
 }
 
-.btn-wrapper button.active:hover::after {
-	transform: translateX(0%);
+.btn-wrapper button:hover::after {
+	transform: translateX(0%) translateY(0%);
+	background: var(--accent-two);
+}
+
+.btn-wrapper button.active::after {
+	transform: translateX(0%) translateY(0%);
 	background: var(--accent-two);
 }
 
@@ -213,9 +223,9 @@ label {
 	content: '';
 	width: 50%;
 	height: 100%;
-	transform: translateX(150%);
+	transform: translateX(150%) translateY(150%);
 	position: absolute;
-	top: 0;
+	bottom: 0;
 	right: 0;
 	background: var(--accent-two);
 	transition: 850ms ease-in-out;
