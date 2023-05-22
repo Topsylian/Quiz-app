@@ -207,11 +207,12 @@ label {
 	transition: 850ms ease-in-out;
 	z-index: -1;
 }
-
+/*
 .btn-wrapper button:hover::after {
 	transform: translateX(0%) translateY(0%);
 	background: var(--accent-two);
 }
+*/
 
 .btn-wrapper button.active:hover::after {
 	transform: translateX(0%) translateY(0%);
