@@ -33,8 +33,8 @@ body {
 	opacity: 1;
   width: 100%;
   height: 100vh;
-  background-color: var(--primary);
-  color: var(--secondary);
+  background-color: var(--secondary);
+  color: var(--primary);
   font-family: var(--inter);
   overflow-x: hidden;
   font-size: 1.6rem;
@@ -61,7 +61,10 @@ aside {
 aside > h2 {
 	font-size: 3.0rem;
 	color: var(--secondary);
-	text-shadow: 1px -1px 5px var(--primary),  0px 2px 2px var(--accent-two);
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1),
+	1px 1px 1px rgba(0, 0, 0, 0.1),
+	-1px -1px 1px rgba(0, 0, 0, 0.1),
+	1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 aside > p {
@@ -96,7 +99,7 @@ button {
 	outline: transparent;
 	border-radius: 0.5rem;
 	background-color: var(--accent-two);
-	color: var(--secondary);
+	color: var(--primary);
 	font-family: var(--poppins);
 	transition: 500ms ease-in-out;
 }
@@ -123,6 +126,7 @@ form {
 .input-box {
 	width: 100%;
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
 	gap: 5px;
 }
@@ -134,24 +138,29 @@ form {
 }
 
 label {
+	width: 100%;
 	font-family: var(--cinzel);
 	font-size: 1.4rem;
 	transition: 500ms ease-in-out;
+	color: var(--primary);
 }
 
 .input-border {
 	width: 100%;
-	height: 40px;
-	border-radius: 0.5rem;
-	padding: 2px 3px 3px 3px;
+	height: 43px;
+	border-radius: 0rem;
+	border: 1px solid var(--accent);
 	background-color: transparent;
 	position: relative;
 	overflow: hidden;
-	transition: all 850ms ease-in-out;
+	transition: all 950ms ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .input-border.focus::before {
-	transform: translateX(0%);
+	transform: translate(0%, 0%);
 	background: var(--accent-two);
 }
 /*
@@ -163,14 +172,14 @@ label {
 .input-border::before {
 	content: '';
 	width: 100%;
-	border-radius: 0.5rem;
+	border-radius: 0rem;
 	height: 100%;
-	transform: translateX(-150%);
+	transform: translate(-150%, -150%);
 	position: absolute;
 	top: 0;
 	left: 0;
 	background: var(--accent-two);
-	transition: 850ms ease-in-out;
+	transition: 950ms ease-in-out;
 	z-index: -1;
 }
 /*
@@ -181,7 +190,7 @@ label {
 */
 
 .input-border.focus::after {
-	transform: translateX(0%);
+	transform: translate(0%, 0%);
 	background: var(--accent-two);
 }
 
@@ -189,24 +198,24 @@ label {
 	content: '';
 	width: 100%;
 	height: 100%;
-	transform: translateX(150%);
+	transform: translate(150%, 150%);
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	background: var(--accent-two);
-	transition: 850ms ease-in-out;
+	transition: 950ms ease-in-out;
 	z-index: -1;
-	border-radius: 0.5rem;
+	border-radius: 0rem;
 }
 
 .input-text {
-	width: 100%;
+	width: 95%;
 	height: 100%;
 	font-family: var(--inter);
-	padding: 10px 0px 10px 15px;
-	font-size: 1.6rem;
-	border-radius: 0.5rem;
-	border: 3px solid transparent;
+	padding: 10px;
+	font-size: 1.4rem;
+	border-radius: 0rem;
+	border: transparent;
 	outline: transparent;
 	background-color: var(--accent);
 	transition: all 950ms ease-in-out;
@@ -219,6 +228,10 @@ label {
 	color: var(--accent-two);
 	justify-content: flex-end;
 	font-family: var(--open-sans);
+}
+
+.input-error {
+	display: none;
 }
 
 .btn-wrapper {

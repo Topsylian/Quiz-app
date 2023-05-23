@@ -41,7 +41,7 @@ fullName.addEventListener("blur", () => {
 			fullName.getAttribute("id") === "name" &&
 			inputBorder[j].getAttribute("id") === "fullname-border"
 		) {
-			labels[j].style.color = "var(--secondary)";
+			labels[j].style.color = "var(--primary)";
 			inputBorder[j].classList.remove("focus");
 		}
 	}
@@ -67,7 +67,7 @@ userName.addEventListener("blur", () => {
 			userName.getAttribute("id") === "username" &&
 			inputBorder[j].getAttribute("id") === "username-border"
 		) {
-			labels[j].style.color = "var(--secondary)";
+			labels[j].style.color = "var(--primary)";
 			inputBorder[j].classList.remove("focus");
 		}
 	}
@@ -93,7 +93,7 @@ passWord.addEventListener("blur", () => {
 			passWord.getAttribute("id") === "pword" &&
 			inputBorder[j].getAttribute("id") === "password-border"
 		) {
-			labels[j].style.color = "var(--secondary)";
+			labels[j].style.color = "var(--primary)";
 			inputBorder[j].classList.remove("focus");
 		}
 	}
