@@ -9,7 +9,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Cinzel:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;400&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="./css/style.css">
 		<script src="./js/script.js" defer></script>
-		<title>Working with JSON</title>
+		<title>Quiz App</title>
 	</head>
 
 	<body>
@@ -19,15 +19,14 @@
 			</header>
 			<form action="#" id="form-group">
 				<aside class="sign-up">
-					<h2>Get started</h2>
-					<p>Create your account</p>
+					<h2>Sign Up</h2>
 				</aside>
 				<div class="form-wrapper">
 					<!--Form user full name-->
 					<div class="input-box full-name">
 						<label for="name">Name</label>
 						<div class="input-wrapper">
-							<div class="input-text-border">
+							<div class="input-border" id="fullname-border">
 								<input type="text" name="name" id="name" class="input-text">
 							</div>
 							<span class="input-error fullname-error">Please enter a valid name</span>
@@ -37,8 +36,18 @@
 					<div class="input-box user-name">
 						<label for="username">Username</label>
 						<div class="input-wrapper">
-							<div class="input-text-border">
+							<div class="input-border" id="username-border">
 								<input type="text" name="username" id="username" class="input-text">
+							</div>
+							<span class="input-error username-error">Please enter a valid name</span>
+						</div>
+					</div>
+					<!--form user's password-->
+					<div class="input-box password">
+						<label for="pword">Password</label>
+						<div class="input-wrapper">
+							<div class="input-border" id="password-border">
+								<input type="password" name="pword" id="pword" class="input-text">
 							</div>
 							<span class="input-error username-error">Please enter a valid name</span>
 						</div>
@@ -46,7 +55,7 @@
 				</div>
 			</form>
 			<div class="btn-wrapper">
-				<button value="Create Account" class="register-btn">Create Account</button>
+				<button value="Create Account" class="register-btn">Sign up</button>
 			</div>
 		</div>
 	</body>

@@ -65,7 +65,7 @@ aside > h2 {
 }
 
 aside > p {
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	color: var(--secondary);
 	font-family: var(--inter);
 }
@@ -136,20 +136,74 @@ form {
 label {
 	font-family: var(--cinzel);
 	font-size: 1.4rem;
+	transition: 500ms ease-in-out;
 }
 
-
-.input-text-border {
+.input-border {
 	width: 100%;
 	height: 40px;
-	padding: 0;
+	border-radius: 0.5rem;
+	padding: 2px 3px 3px 3px;
+	background-color: transparent;
+	position: relative;
+	overflow: hidden;
+	transition: all 850ms ease-in-out;
+}
+
+.input-border.focus::before {
+	transform: translateX(0%);
+	background: var(--accent-two);
+}
+/*
+.btn-wrapper button:hover::before {
+	transform: translate(0%);
+	background: var(--accent-two);
+}
+*/
+.input-border::before {
+	content: '';
+	width: 100%;
+	border-radius: 0.5rem;
+	height: 100%;
+	transform: translateX(-150%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: var(--accent-two);
+	transition: 850ms ease-in-out;
+	z-index: -1;
+}
+/*
+.btn-wrapper button:hover::after {
+	transform: translateX(0%) translateY(0%);
+	background: var(--accent-two);
+}
+*/
+
+.input-border.focus::after {
+	transform: translateX(0%);
+	background: var(--accent-two);
+}
+
+.input-border::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	transform: translateX(150%);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: var(--accent-two);
+	transition: 850ms ease-in-out;
+	z-index: -1;
+	border-radius: 0.5rem;
 }
 
 .input-text {
 	width: 100%;
 	height: 100%;
 	font-family: var(--inter);
-	padding: 10px 15px 10px 0px;
+	padding: 10px 0px 10px 15px;
 	font-size: 1.6rem;
 	border-radius: 0.5rem;
 	border: 3px solid transparent;
@@ -157,10 +211,6 @@ label {
 	background-color: var(--accent);
 	transition: all 950ms ease-in-out;
 	color: var(--primary);
-}
-
-.input-text:focus {
-	animation: borderAnimation 2000ms infinite linear;
 }
 
 .input-error {
@@ -186,8 +236,8 @@ label {
 	border: 1px solid var(--accent);
 }
 
-.btn-wrapper button.active:hover::before {
-	transform: translate(0%);
+.btn-wrapper button.active::before {
+	transform: translate(0%, 0%);
 	background: var(--accent-two);
 }
 /*
@@ -200,7 +250,7 @@ label {
 	content: '';
 	width: 50%;
 	height: 100%;
-	transform: translateX(-150%) translateY(-150%);
+	transform: translate(-150%, -150%);
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -215,8 +265,8 @@ label {
 }
 */
 
-.btn-wrapper button.active:hover::after {
-	transform: translateX(0%) translateY(0%);
+.btn-wrapper button.active::after {
+	transform: translate(0%, 0%);
 	background: var(--accent-two);
 }
 
@@ -224,7 +274,7 @@ label {
 	content: '';
 	width: 50%;
 	height: 100%;
-	transform: translateX(150%) translateY(150%);
+	transform: translate(150%, 150%);
 	position: absolute;
 	bottom: 0;
 	right: 0;
