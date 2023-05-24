@@ -27,9 +27,9 @@
 						<label for="name">Name</label>
 						<div class="input-wrapper">
 							<div class="input-border" id="fullname-border">
-								<input type="text" name="name" id="name" class="input-text">
+								<input type="text" name="name" id="name" class="input-text" autocomplete="off">
 							</div>
-							<span class="input-error fullname-error">Please enter a valid name</span>
+							<span class="input-error" id="fullname-error">Please enter a valid name</span>
 						</div>
 					</div>
 					<!--form user's username-->
@@ -39,7 +39,7 @@
 							<div class="input-border" id="username-border">
 								<input type="text" name="username" id="username" class="input-text">
 							</div>
-							<span class="input-error username-error">Please enter a valid name</span>
+							<span class="input-error" id="username-error">Please enter a valid name</span>
 						</div>
 					</div>
 					<!--form user's password-->
@@ -49,13 +49,13 @@
 							<div class="input-border" id="password-border">
 								<input type="password" name="pword" id="pword" class="input-text">
 							</div>
-							<span class="input-error username-error">Please enter a valid name</span>
+							<span class="input-error" id="password-error">Please enter a valid name</span>
 						</div>
 					</div>
 				</div>
 			</form>
 			<div class="btn-wrapper">
-				<button value="Create Account" class="register-btn">Sign up</button>
+				<button value="Create Account" class="register-btn" type="submit">Sign up</button>
 			</div>
 		</div>
 	</body>
