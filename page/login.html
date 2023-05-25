@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Aclonica&family=Cinzel:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;400&display=swap"
+			rel="stylesheet">
+		<link rel="stylesheet" href="../css/style.css">
+		<script src="../js/login.js" defer></script>
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<header>
+				<h1>Quiz <span>App</span></h1>
+			</header>
+			<form action="./quiz.html" id="form-group">
+				<aside class="sign-up">
+					<h2>Log In</h2>
+				</aside>
+				<div class="form-wrapper">
+					<!--form user's username-->
+					<div class="input-box user-name">
+						<label for="username">Username</label>
+						<div class="input-wrapper">
+							<div class="input-border" id="username-border">
+								<input type="text" name="username" id="username" class="input-text">
+							</div>
+							<span class="input-error" id="username-error">Please enter a valid name</span>
+						</div>
+					</div>
+					<!--form user's password-->
+					<div class="input-box password">
+						<label for="pword">Password</label>
+						<div class="input-wrapper">
+							<div class="input-border" id="password-border">
+								<input type="password" name="pword" id="pword" class="input-text">
+							</div>
+							<span class="input-error" id="password-error">Please enter a valid name</span>
+						</div>
+					</div>
+				</div>
+				<div class="btn-wrapper">
+					<button value="Create Account" class="login-btn" type="submit">Log in</button>
+				</div>
+			</form>
+		</div>
+			<button id="back-to-sign">
+				<a href="../index.html">back to <span>sign up</span></a>
+			</button>
+	</body>
+
+</html>

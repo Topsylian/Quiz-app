@@ -1,17 +1,16 @@
-"use-strict";
+"use strict";
 
 const body = document.querySelector("body");
 const container = document.querySelector(".container");
-const registerBtn = document.querySelector("button.register-btn");
+const registerBtn = document.querySelector("button.login-btn");
 const form = document.querySelector("form");
 const labels = document.querySelectorAll("label");
-const fullName = document.querySelector("input#name");
 const userName = document.querySelector("input#username");
 const passWord = document.querySelector("input#pword");
 const errorMsg = document.querySelectorAll("span.input-error");
 const inputBorder = document.querySelectorAll("div.input-border");
 
-
+/*
 fullName.addEventListener("focus", () => {
   for (let j = 0; j < labels.length; j++) {
     if (
@@ -41,7 +40,7 @@ fullName.addEventListener("blur", () => {
     }
   }
 });
-
+*/
 userName.addEventListener("focus", () => {
   for (let j = 0; j < labels.length; j++) {
     if (
@@ -63,9 +62,7 @@ userName.addEventListener("blur", () => {
       inputBorder[j].getAttribute("id") === "username-border"
     ) {
       labels[j].style.color = "var(--primary)";
-			inputBorder[j].classList.remove("focus");
-			inputBorder[j].classList.remove("valid");
-      inputBorder[j].classList.remove("error");
+      inputBorder[j].classList.remove("focus");
     }
   }
 });
@@ -91,39 +88,9 @@ passWord.addEventListener("blur", () => {
       inputBorder[j].getAttribute("id") === "password-border"
     ) {
       labels[j].style.color = "var(--primary)";
-			inputBorder[j].classList.remove("focus");
-			inputBorder[j].classList.remove("valid");
-      inputBorder[j].classList.remove("error");
+      inputBorder[j].classList.remove("focus");
     }
   }
-});
-
-fullName.addEventListener("keyup", () => {
-  let regex = /^[a-zA-Z]+$/;
-	for (let j = 0; j < inputBorder.length; j++) {
-		if (
-			errorMsg[j].getAttribute("id") === "fullname-error" &&
-			regex.test(fullName.value)
-		) {
-			errorMsg[j].style.display = "flex";
-			errorMsg[j].style.color = "var(--form-valid)";
-			errorMsg[j].textContent = `valid`;
-			inputBorder[j].classList.remove("focus");
-			inputBorder[j].classList.add("valid");
-			inputBorder[j].classList.remove("error");
-		} else {
-			let regex = /\d/;
-			if (errorMsg[j].getAttribute("id") === "fullname-error" &&
-			regex.test(fullName.value)) {
-				errorMsg[j].style.display = "flex";
-			errorMsg[j].style.color = "var(--form-error)";
-			errorMsg[j].textContent = `Invalid, letter only`;
-			inputBorder[j].classList.remove("focus");
-			inputBorder[j].classList.remove("valid");
-			inputBorder[j].classList.add("error");
-			}
-		}
-	}
 });
 
 userName.addEventListener("keyup", () => {
@@ -204,32 +171,31 @@ registerBtn.addEventListener("click", function (e) {
 	}
 
 	function validateForm() {
-		const name = fullName.value;
 		const uname = userName.value;
 		const pword = passWord.value;
-		localStorage.setItem("name", name);
-		localStorage.setItem("uname", uname);
-		localStorage.setItem("pword", pword);
+
+		const savedUser = localStorage.getItem("uname");
+		const savedPass = localStorage.getItem("pword");
 	
-		if (fullName.value && userName.value && passWord.value) {
-			console.log("true");
+		if (savedUser === userName.value && savedPass === passWord.value) {
+			console.log(savedUser, savedPass);
 			return true;
 		} else {
+			for (let i = 0; i < errorMsg.length; i++) {
+				if (errorMsg[i]) {
+					errorMsg[i].textContent = "wrong details, check your username and password";
+					errorMsg[i].style.color = "var(--form-error)";
+					inputBorder[i].classList.add("error");
+					inputBorder[i].classList.remove("valid");
+				} else {
+					errorMsg[i].textContent = "valid";
+					errorMsg[i].style.color = "var(--form-valid)";
+					inputBorder[i].classList.remove("error");
+					inputBorder[i].classList.add("valid");
+				}
+			}
 			console.log("There's error");
 			return false;
 		}
 	}
 });
-/*
-window.addEventListener("load", () => {
-	setTimeout(() => {
-		body.style.opacity = 1;
-	}, 1500);
-})
-
-	
-	if (fullName.value === savedName && userName.value === savedUser && userPass.value === savedPass) {
-		window.location.href = "login.html";
-		console.log("Logged");
-	}
-*/

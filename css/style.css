@@ -23,9 +23,9 @@
   --inter: "Inter", sans-serif;
   --open-sans: "Open Sans", sans-serif;
   --poppins: "Poppins", sans-serif;
-	--form-valid: #25d366;
-	--form-error: #f70000;
-	--form-good: orange;
+  --form-valid: #25d366;
+  --form-error: #f70000;
+  --form-good: orange;
 }
 
 html {
@@ -33,7 +33,7 @@ html {
 }
 
 body {
-	opacity: 1;
+  opacity: 1;
   width: 100%;
   height: 100vh;
   background-color: var(--secondary);
@@ -46,40 +46,40 @@ body {
 }
 
 header {
-	width: 100%;
-	padding: 2% 2%;
-	margin-bottom: 50px;
+  width: 100%;
+  padding: 2% 2%;
+  margin-bottom: 50px;
 }
 
 header > h1 > span {
-	color: var(--accent-two);
+  color: var(--accent-two);
 }
 
 aside {
-	width: 100%;
-	padding: 2% 2%;
-	margin-bottom: 20px;
+  width: 100%;
+  padding: 2% 2%;
+  margin-bottom: 20px;
 }
 
 aside > h2 {
-	font-size: 3.0rem;
-	color: var(--text);
-	text-shadow: 1px 1px 2px rgba(164, 163, 163, 0.5);
+  font-size: 3rem;
+  color: var(--text);
+  text-shadow: 1px 1px 2px rgba(164, 163, 163, 0.5);
 }
 
 aside > p {
-	font-size: 1.6rem;
-	color: var(--secondary);
-	font-family: var(--inter);
+  font-size: 1.6rem;
+  color: var(--secondary);
+  font-family: var(--inter);
 }
 
 h1 {
   font-size: 3.5rem;
-	font-family: var(--aclonica);
+  font-family: var(--aclonica);
 }
 
 h2 {
-	font-family: var(--inter);
+  font-family: var(--inter);
 }
 
 p {
@@ -88,81 +88,85 @@ p {
 }
 
 button {
-	width: 40%;
-	height: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1.4rem;
-	font-weight: 600;
-	border: transparent;
-	outline: transparent;
-	border-radius: 0.5rem;
-	background-color: var(--accent-two);
-	color: var(--primary);
-	font-family: var(--poppins);
-	transition: 500ms ease-in-out;
+  width: 40%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: transparent;
+  outline: transparent;
+  border-radius: 0.5rem;
+  background-color: var(--accent-two);
+  color: var(--primary);
+  font-family: var(--poppins);
+  transition: 500ms ease-in-out;
 }
 
 .container {
-	width: 100%;
-	height: 100vh;
+  width: 100%;
+  height: 100vh;
   padding: 2% 2%;
-	cursor: pointer;
+  cursor: pointer;
 }
 
 form {
-	cursor: pointer;
-	margin-bottom: 50px;
+  cursor: pointer;
+  margin-bottom: 50px;
 }
 
 .form-wrapper {
-	width: 100%;
-	gap: 15px;
-	display: flex;
-	flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-box {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	gap: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.password {
+  margin-bottom: 20px;
 }
 
 .input-wrapper {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 label {
-	width: 100%;
-	font-family: var(--cinzel);
-	font-size: 1.4rem;
-	transition: 500ms ease-in-out;
-	color: var(--primary);
+  width: 100%;
+  font-family: var(--cinzel);
+  font-size: 1.4rem;
+  transition: 500ms ease-in-out;
+  color: var(--primary);
 }
 
 .input-border {
-	width: 100%;
-	height: 43px;
-	padding: 2px 3px;
-	border-radius: 0rem;
-	border: 1px solid var(--accent);
-	background-color: transparent;
-	position: relative;
-	overflow: hidden;
-	transition: all 950ms ease-in-out;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 100%;
+  height: 43px;
+  padding: 2px 3px;
+  border-radius: 0rem;
+  border: 1px solid var(--accent);
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: all 950ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-border.focus::before {
-	transform: translate(0%, 0%);
-	background: var(--accent-two);
+  transform: translate(0%, 0%);
+  background: var(--accent-two);
 }
 /*
 .btn-wrapper button:hover::before {
@@ -171,17 +175,17 @@ label {
 }
 */
 .input-border::before {
-	content: '';
-	width: 100%;
-	border-radius: 0rem;
-	height: 100%;
-	transform: translate(-150%, -150%);
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: var(--accent-two);
-	transition: 950ms ease-in-out;
-	z-index: -1;
+  content: "";
+  width: 100%;
+  border-radius: 0rem;
+  height: 100%;
+  transform: translate(-150%, -150%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--accent-two);
+  transition: 950ms ease-in-out;
+  z-index: -1;
 }
 /*
 .btn-wrapper button:hover::after {
@@ -191,84 +195,84 @@ label {
 */
 
 .input-border.focus::after {
-	transform: translate(0%, 0%);
-	background: var(--accent-two);
+  transform: translate(0%, 0%);
+  background: var(--accent-two);
 }
 
 .input-border.valid::after {
-	transform: translate(0%, 0%);
-	background: var(--form-valid);
+  transform: translate(0%, 0%);
+  background: var(--form-valid);
 }
 
 .input-border.error::after {
-	transform: translate(0%, 0%);
-	background: var(--form-error);
+  transform: translate(0%, 0%);
+  background: var(--form-error);
 }
 
 .input-border::after {
-	content: '';
-	width: 100%;
-	height: 100%;
-	transform: translate(150%, 150%);
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	background: var(--accent-two);
-	transition: 950ms ease-in-out;
-	z-index: -1;
-	border-radius: 0rem;
+  content: "";
+  width: 100%;
+  height: 100%;
+  transform: translate(150%, 150%);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--accent-two);
+  transition: 950ms ease-in-out;
+  z-index: -1;
+  border-radius: 0rem;
 }
 
 .input-text {
-	width: 100%;
-	height: 100%;
-	font-family: var(--inter);
-	padding: 10px;
-	font-size: 1.6rem;
-	border-radius: 0rem;
-	border: transparent;
-	outline: transparent;
-	background-color: var(--accent);
-	transition: all 950ms ease-in-out;
-	color: var(--primary);
+  width: 100%;
+  height: 100%;
+  font-family: var(--inter);
+  padding: 10px;
+  font-size: 1.6rem;
+  border-radius: 0rem;
+  border: transparent;
+  outline: transparent;
+  background-color: var(--accent);
+  transition: all 950ms ease-in-out;
+  color: var(--primary);
 }
 
 .input-error {
-	display: flex;
-	font-size: 1.2rem;
-	color: var(--accent-two);
-	justify-content: flex-end;
-	font-family: var(--open-sans);
+  display: flex;
+  font-size: 1.2rem;
+  color: var(--accent-two);
+  justify-content: flex-end;
+  font-family: var(--open-sans);
 }
 
 .input-error {
-	display: none;
+  display: none;
 }
 
 .btn-wrapper {
-	width: 100%;
-	display: flex;
-	justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-wrapper > button {
-	background: transparent;
-	position: relative;
-	transition: 500ms ease-in-out;
-	overflow: hidden;
-	z-index: 1;
-	border: 1px solid var(--accent);
+  background: transparent;
+  position: relative;
+  transition: 500ms ease-in-out;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid var(--accent);
 }
 
 .btn-wrapper > button.active {
-	color: var(--secondary);
-	transition: all 950ms ease-in-out;
+  color: var(--secondary);
+  transition: all 950ms ease-in-out;
 }
 
 .btn-wrapper button.active::before {
-	transform: translate(0%, 0%);
-	background: var(--accent-two);
-	color: var(--secondary);
+  transform: translate(0%, 0%);
+  background: var(--accent-two);
+  color: var(--secondary);
 }
 /*
 .btn-wrapper button:hover::before {
@@ -277,16 +281,16 @@ label {
 }
 */
 .btn-wrapper button::before {
-	content: '';
-	width: 50%;
-	height: 100%;
-	transform: translate(-150%, -150%);
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: var(--accent-two);
-	transition: 850ms ease-in-out;
-	z-index: -1;
+  content: "";
+  width: 50%;
+  height: 100%;
+  transform: translate(-150%, -150%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--accent-two);
+  transition: 850ms ease-in-out;
+  z-index: -1;
 }
 /*
 .btn-wrapper button:hover::after {
@@ -296,20 +300,20 @@ label {
 */
 
 .btn-wrapper button.active::after {
-	transform: translate(0%, 0%);
-	background: var(--accent-two);
-	color: var(--secondary);
+  transform: translate(0%, 0%);
+  background: var(--accent-two);
+  color: var(--secondary);
 }
 
 .btn-wrapper button::after {
-	content: '';
-	width: 50%;
-	height: 100%;
-	transform: translate(150%, 150%);
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	background: var(--accent-two);
-	transition: 850ms ease-in-out;
-	z-index: -1;
+  content: "";
+  width: 50%;
+  height: 100%;
+  transform: translate(150%, 150%);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--accent-two);
+  transition: 850ms ease-in-out;
+  z-index: -1;
 }
