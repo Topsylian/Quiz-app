@@ -260,6 +260,10 @@ header {
   margin-bottom: 15.5rem;
 }
 
+.welcome-greeting > h1 {
+  font-size: 2.8rem;
+}
+
 .welcome-greeting > h1 > span {
   color: var(--primary);
 }
