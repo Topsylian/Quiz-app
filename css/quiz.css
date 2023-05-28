@@ -19,7 +19,7 @@
   --primary: #4f5255;
   --text: #4f5255a0;
   --black: #000000;
-  --accent-two: #30b7df;
+  --accent-two: #a2a2f9;
   --aclonica: "Aclonica", sans-serif;
   --cinzel: "Cinzel", serif;
   --inter: "Inter", sans-serif;
@@ -243,7 +243,7 @@ header {
 .menu-bar > div > a {
 	color: var(--primary);
 	font-size: 1.8rem;
-	font-weight: 800;
+	font-weight: 400;
 	font-family: var(--inter);
 	text-decoration: none;
 }
