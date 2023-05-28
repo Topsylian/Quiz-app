@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Aclonica&family=Cinzel:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;400&display=swap"
+			rel="stylesheet">
+		<link rel="stylesheet" href="../css/quiz.css">
+		<script src="../js/quiz.js" defer></script>
+		<title>Quiz</title>
+	</head>
+
+	<body>
+		<main class="quiz-container">
+			<header class="quiz-header">
+				<section class="profile-icon">
+					<div class="profile-img-wrapper">
+						<img src="../image/programmer-focused.avif" alt="">
+					</div>
+				</section>
+				<section class="scoreboard">
+					<div class="scoreboard-wrapper">
+						<div class="users-score">
+							<p>1</p>
+						</div>
+						<span>/</span>
+						<div class="total-score">
+							<p>10</p>
+						</div>
+					</div>
+				</section>
+				<section class="hamburger-menu">
+					<section class="hamburger-wrapper">
+						<div class="stick" id="top"></div>
+						<div class="stick" id="middle"></div>
+						<div class="stick" id="bottom"></div>
+					</section>
+				</section>
+				<nav class="menu-bar">
+					<div class="menu-profile"><a href="#users-profile">Profile</a></div>
+					<div class="menu-total-score"><a href="#users-profile-socre">Scoreboard</a></div>
+				</nav>
+			</header>
+			<!--welcome section after clicking on button start, it will become hidden.-->
+			<section class="welcome-section" id="welcome-section">
+				<section class="welcome-greeting">
+					<h1>Welcome, <span class="users">Ray</span></h1>
+					<p>Click to start</p>
+				</section>
+
+				<section class="start-btn">
+					<button>Click to start</button>
+				</section>
+			</section>
+			<section class="quiz-page" id="quiz-page">
+				<section class="quiz-page-header">
+					<p class="quiz-guide">Select answer</p>
+					<p class="skip-question">Skip</p>
+				</section>
+				<section class="quiz-question-show">
+					<section class="question-info">
+						<p></p>
+					</section>
+					<section class="question-img-wrapper">
+						<img src="" alt="">
+					</section>
+					<section class="question-answer-box">
+						<section class="options-wrapper">
+							<div class="answer-opt-one">
+								<span>1</span>
+							</div>
+							<div class="answer-one">one</div>
+						</section>
+						<section class="options-wrapper">
+							<div class="answer-opt-one">
+								<span>1</span>
+							</div>
+							<div class="answer-one">one</div>
+						</section>
+						<section class="options-wrapper">
+							<div class="answer-opt-one">
+								<span>1</span>
+							</div>
+							<div class="answer-one">one</div>
+						</section>
+						<section class="options-wrapper">
+							<div class="answer-opt-one">
+								<span>1</span>
+							</div>
+							<div class="answer-one">one</div>
+						</section>
+					</section>
+				</section>
+			</section>
+			<section class="users-profile-content" id="users-profile">
+
+			</section>
+			<section class="users-profile-score" id="users-profile-score">
+
+			</section>
+		</main>
+	</body>
+
+</html>

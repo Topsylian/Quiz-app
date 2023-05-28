@@ -1,4 +1,4 @@
-"use-strict";
+"use strict";
 
 const body = document.querySelector("body");
 const container = document.querySelector(".container");
