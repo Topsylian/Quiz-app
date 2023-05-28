@@ -38,7 +38,7 @@ body {
   opacity: 1;
   width: 100%;
   height: 100vh;
-  background-color: var(--secondary);
+  background-color: var(--accent);
   color: var(--primary);
   font-family: var(--inter);
   overflow-x: hidden;
