@@ -202,15 +202,15 @@ header {
 }
 
 #cross-one {
-  width: 60%;
+  width: 40%;
   transform: translate(50px, -50px) rotate(45deg);
-  background-color: var(--accent-two);
+  background-color: var(--accent);
 }
 
 #cross-two {
-  width: 60%;
+  width: 40%;
   transform: translate(-50px, 50px) rotate(-45deg);
-  background-color: var(--accent-two);
+  background-color: var(--accent);
 }
 /*menu design*/
 .menu-bar {
