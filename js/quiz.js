@@ -22,7 +22,7 @@ hamburger.addEventListener("click", () => {
 			sticks[i].setAttribute("class", "non-stick");
 			dropMenu.style.visibility = "visible";
 			dropMenu.style.height = "100vh";
-			dropMenu.style.width = "90%";
+			dropMenu.style.width = "80%";
 			crossOne.style.transform = "translate(-8px, -2px) rotate(45deg)";
 			crossTwo.style.transform = "translate(-8px, -8px) rotate(-45deg) ";
     } else {

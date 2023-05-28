@@ -18,6 +18,7 @@
   --accent: #ece5dd;
   --primary: #4f5255;
   --text: #4f5255a0;
+  --black: #000000;
   --accent-two: #e80d82;
   --aclonica: "Aclonica", sans-serif;
   --cinzel: "Cinzel", serif;
@@ -203,13 +204,13 @@ header {
 #cross-one {
   width: 60%;
   transform: translate(50px, -50px) rotate(45deg);
-  background-color: var(--accent-two);
+  background-color: var(--primary);
 }
 
 #cross-two {
   width: 60%;
   transform: translate(-50px, 50px) rotate(-45deg);
-  background-color: var(--accent-two);
+  background-color: var(--primary);
 }
 /*menu design*/
 .menu-bar {
@@ -225,7 +226,7 @@ header {
 	top: 0;
   left: -3%;
 	transition: all 550ms ease-in-out;
-	background-color: var(--accent-two);
+	background-color: var(--primary);
   transform: translate(0, 0);
 }
 
@@ -239,7 +240,7 @@ header {
 }
 
 .menu-bar > div > a {
-	color: var(--form-valid);
+	color: var(--secondary);
 	font-size: 1.8rem;
 	font-weight: 800;
 	font-family: var(--inter);
