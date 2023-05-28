@@ -1,5 +1,6 @@
 "use strict";
 
+const body = document.querySelector("body");
 const hamburger = document.querySelector(".hamburger-wrapper");
 const dropMenu = document.querySelector(".menu-bar");
 const sticks = document.querySelectorAll("div.stick");
@@ -24,7 +25,10 @@ hamburger.addEventListener("click", () => {
 			dropMenu.style.height = "100vh";
 			dropMenu.style.width = "90%";
 			crossOne.style.transform = "translate(-8px, -2px) rotate(45deg)";
+			crossOne.style.backgroundColor = "var(--primary)";
+			crossTwo.style.backgroundColor = "var(--primary)";
 			crossTwo.style.transform = "translate(-8px, -8px) rotate(-45deg) ";
+			body.style.background = "var(--accent)";
     } else {
       sticks[i].style.transition = "800ms ease-in-out";
 			sticks[i].setAttribute("class", "stick");
@@ -34,6 +38,7 @@ hamburger.addEventListener("click", () => {
 			dropMenu.style.width = "0%";
 			crossOne.style.transform = "translate(50px, -50px) rotate(45deg)";
 			crossTwo.style.transform = "translate(-50px, 50px) rotate(-45deg) ";
+			body.style.background = "var(--primary)";
     }
   }
 });

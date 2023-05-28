@@ -63,6 +63,7 @@ p {
 }
 
 a {
+  display: block;
 	text-decoration: none;
 }
 
@@ -236,6 +237,10 @@ header {
 }
 
 .menu-bar > div {
+  width: 50%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
   margin-left: 5%;
   transition: 0ms ease-in;
 }
@@ -245,11 +250,34 @@ header {
 }
 
 .menu-bar > div > a {
+  width: fit-content;
 	color: var(--primary);
 	font-size: 1.4rem;
 	font-weight: 400;
 	font-family: var(--inter);
 	text-decoration: none;
+  position: relative;
+  transition: 500ms ease-in-out;
+  transform: translate(0px, 0px);
+}
+
+.menu-bar > div > a:hover {
+  transform: translate(.8rem, 0px);
+}
+
+.menu-bar > div > a:hover::before {
+  width: 100%;
+}
+
+.menu-bar > div > a::before {
+  content: "";
+  width: 50%;
+  height: 1px;
+  position: absolute;
+  background-color: var(--primary);
+  bottom: -0.2rem;
+  left: 0;
+  transition: 500ms ease-in-out;
 }
 
 /*Welcome section design*/
