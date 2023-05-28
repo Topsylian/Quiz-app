@@ -82,8 +82,8 @@ button {
   border: transparent;
   outline: transparent;
   border-radius: 0.5rem;
-  background-color: var(--accent-two);
-  color: var(--primary);
+  background-color: var(--primary);
+  color: var(--secondary);
   font-family: var(--poppins);
   transition: 500ms ease-in-out;
 }
