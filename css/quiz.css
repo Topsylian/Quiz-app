@@ -166,7 +166,7 @@ header {
 	align-items: flex-end;
 	gap: .4rem;
 	transition: 850ms ease-in-out;
-	overflow-x: hidden;
+  overflow: hidden;
 }
 
 .hamburger-wrapper.click > #top, .hamburger-wrapper.click > #bottom {
@@ -174,7 +174,7 @@ header {
 }
 
 .hamburger-wrapper.click > #middle {
-  transform: translate(-50%, 0%);
+  transform: translate(-500%, 0%);
   width: 60%;
 }
 
@@ -203,6 +203,17 @@ header {
 	transition: 950ms ease-in-out;
 }
 
+#cross-one {
+  width: 60%;
+  transform: translate(50px, -50px) rotate(45deg);
+  background-color: var(--accent-two);
+}
+
+#cross-two {
+  width: 60%;
+  transform: translate(-50px, 50px) rotate(-45deg);
+  background-color: var(--accent-two);
+}
 /*menu design*/
 .menu-bar {
 	width: 0%;
@@ -218,7 +229,7 @@ header {
 	top: 0;
   left: -3%;
 	transition: 850ms ease-in-out;
-	background-color: var(--primary);
+	background-color: var(--accent-two);
   transform: translate(0, 0);
 }
 
