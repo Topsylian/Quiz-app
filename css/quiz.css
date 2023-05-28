@@ -240,9 +240,13 @@ header {
   transition: 0ms ease-in;
 }
 
+.menu-profile {
+  margin-top: 5.5rem;
+}
+
 .menu-bar > div > a {
 	color: var(--primary);
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 	font-weight: 400;
 	font-family: var(--inter);
 	text-decoration: none;
