@@ -18,7 +18,7 @@
   --accent: #ece5dd;
   --primary: #4f5255;
   --text: #4f5255a0;
-  --accent-two: #6395f1;
+  --accent-two: #a2a2f9;
   --aclonica: "Aclonica", sans-serif;
   --cinzel: "Cinzel", serif;
   --inter: "Inter", sans-serif;
@@ -151,7 +151,7 @@ label {
   font-family: var(--cinzel);
   font-size: 1.4rem;
   transition: 500ms ease-in-out;
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .input-border {

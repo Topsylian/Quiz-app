@@ -225,6 +225,7 @@ header {
 	position: absolute;
 	top: 0;
   left: -3%;
+  z-index: 2;
 	transition: all 550ms ease-in-out;
 	background-color: var(--accent);
   transform: translate(0, 0);
@@ -283,8 +284,67 @@ header {
 }
 
 .start-btn > button {
-  background-color: var(--accent);
+  background: var(--accent);
+  position: relative;
+  transition: 500ms ease-in-out;
+  overflow: hidden;
+  z-index: 1;
   color: var(--primary);
+  border: 1px solid var(--accent);
+}
+
+.start-btn > button.active {
+  color: var(--secondary);
+  transition: all 850ms ease-in-out;
+}
+
+.start-btn > button.active::before {
+  transform: translate(0%, 0%);
+  background: var(--primary);
+  color: var(--secondary);
+}
+/*
+.btn-wrapper button:hover::before {
+	transform: translate(0%);
+	background: var(--accent-two);
+}
+*/
+.start-btn button::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  transform: translate(-150%, -150%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--primary);
+  transition: 550ms ease-in-out;
+  z-index: -1;
+}
+/*
+.btn-wrapper button:hover::after {
+	transform: translateX(0%) translateY(0%);
+	background: var(--accent-two);
+}
+*/
+
+.start-btn button.active::after {
+  transform: translate(0%, 0%);
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+.start-btn button::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  transform: translate(150%, 150%);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--primary);
+  transition: 850ms ease-in-out;
+  z-index: -1;
 }
 
 /*quiz page*/

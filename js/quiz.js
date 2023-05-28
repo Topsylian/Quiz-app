@@ -6,7 +6,7 @@ const sticks = document.querySelectorAll("div.stick");
 const crossOne = document.querySelector("#cross-one");
 const crossTwo = document.querySelector("#cross-two");
 const usersName = document.querySelector("#users-name");
-
+const registerBtn = document.querySelector("button");
 /*users's username should show beside the Welcome text*/
 usersName.textContent;
 const userInputName = localStorage.getItem("uname");
@@ -38,3 +38,12 @@ hamburger.addEventListener("click", () => {
   }
 });
 
+registerBtn.addEventListener("click", function () {
+	if (registerBtn.getAttribute("class") === "start") {
+    registerBtn.classList.add("active");
+    registerBtn.setAttribute("class", "active");
+  } else {
+    registerBtn.classList.remove("active");
+    registerBtn.setAttribute("class", "start");
+	}
+});
