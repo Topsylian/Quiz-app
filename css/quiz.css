@@ -388,7 +388,6 @@ body.flex #quiz-page {
   color: var(--primary);
   border-radius: 0.5rem;
   padding: 1rem;
-  padding-bottom: 5.5rem;
 }
 
 .quiz-page-wrapper {
@@ -409,7 +408,7 @@ body.flex #quiz-page {
 
 .quiz-page-header > button {
   background-color: transparent;
-  border: 1px solid var(--accent-two);
+  height: fit-content;
   color: var(--accent-two);
 }
 
@@ -443,6 +442,11 @@ body.flex #quiz-page {
   gap: 1.5rem;
   padding: 0 1.5rem;
   background-color: var(--secondary);
+  transition: 500ms ease-in-out;
+}
+
+.options-wrapper:hover {
+  background-color: var(--accent-two);
 }
 
 .options-wrapper > p {
@@ -450,7 +454,7 @@ body.flex #quiz-page {
 }
 
 .quiz-page-footer {
-  padding-top: 2.5rem;
+  padding-top: 7.5rem;
   width: 100%;
   height: fit-content;
   display: flex;
@@ -462,6 +466,10 @@ body.flex #quiz-page {
   background-color: transparent;
   border: 1px solid;
   color: var(--primary);
+}
+
+.quiz-page-footer > .back-to-start {
+  border: transparent;
 }
 
 /*users profile page*/
