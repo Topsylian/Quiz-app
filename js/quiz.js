@@ -1,6 +1,7 @@
 "use strict";
 
 const body = document.querySelector("body");
+const header = document.querySelector(".quiz-header");
 const hamburger = document.querySelector(".hamburger-wrapper");
 const dropMenu = document.querySelector(".menu-bar");
 const sticks = document.querySelectorAll("div.stick");
@@ -63,7 +64,7 @@ startBtn.addEventListener("click", function () {
     startBtn.classList.remove("active");
     startBtn.setAttribute("class", "start");
   }
-
+  header.style.display = "none";
   localStorage.setItem("display", "flex");
 
   const storedDisplay = localStorage.getItem("display");
@@ -80,4 +81,5 @@ if (localStorage.getItem("display") === "flex") {
 backToStartBtn.addEventListener("click", () => {
   body.classList.remove("flex");
   localStorage.removeItem("display");
+  header.style.display = "flex";
 });
