@@ -64,7 +64,7 @@ p {
 
 a {
   display: block;
-	text-decoration: none;
+  text-decoration: none;
 }
 
 img {
@@ -83,24 +83,28 @@ button {
   border: transparent;
   outline: transparent;
   border-radius: 0.5rem;
-  background-color: var(--primary);
-  color: var(--secondary);
+  background-color: var(--accent);
+  color: var(--primary);
   font-family: var(--poppins);
 }
 
-main{
+main {
   width: 100%;
   height: 100vh;
   padding: 0% 2%;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
   width: 100%;
-  margin-bottom: 50px;
+  height: fit-content;
+  margin-bottom: 0px;
   display: flex;
-	justify-content: space-between;
-	position: relative;
+  justify-content: space-between;
+  position: relative;
 }
 
 .profile-icon {
@@ -124,50 +128,51 @@ header {
 
 /*scoreboard design*/
 .scoreboard {
-	width: 40%;
+  width: 40%;
 }
 
 .scoreboard-wrapper {
-	width: 100%;
-	height: 100%;
-	padding: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-	gap: 0.5rem;
+  gap: 0.5rem;
 }
 
 .scoreboard-wrapper p {
-	font-size: 1.6rem;
-	font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
 .scoreboard-wrapper span {
-	font-size: 1.8rem;
-	font-weight: 400;
+  font-size: 1.8rem;
+  font-weight: 400;
 }
 
 /*hamburger menu design*/
 .hamburger-menu {
-	width: 30%;
-	display: flex;
-	justify-content: end;
-	align-items: center;
+  width: 30%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 .hamburger-wrapper {
-	width: 50px;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-end;
-	gap: .4rem;
-	transition: 550ms ease-in-out;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.4rem;
+  transition: 550ms ease-in-out;
   overflow: hidden;
 }
 
-.hamburger-wrapper.click > #top, .hamburger-wrapper.click > #bottom {
+.hamburger-wrapper.click > #top,
+.hamburger-wrapper.click > #bottom {
   transform: translate(-500%, 0%);
 }
 
@@ -176,29 +181,30 @@ header {
   width: 60%;
 }
 
-.stick, .non-stick {
-	width: 100%;
-	padding: 0px;
-	height: 2px;
-	background-color: var(--accent);
-	transition: 850ms ease-in-out;
+.stick,
+.non-stick {
+  width: 100%;
+  padding: 0px;
+  height: 2px;
+  background-color: var(--accent);
+  transition: 850ms ease-in-out;
 }
 
 #top {
-	width: 80%;
+  width: 80%;
   transform: translate(0, 0);
-	transition: 100ms ease-in-out;
+  transition: 100ms ease-in-out;
 }
 
 #middle {
   transform: translate(0, 0);
-	width: 60%;
-	transition: 750ms ease-in-out;
+  width: 60%;
+  transition: 750ms ease-in-out;
 }
 
 #bottom {
-	width: 40%;
-	transition: 950ms ease-in-out;
+  width: 40%;
+  transition: 950ms ease-in-out;
 }
 
 #cross-one {
@@ -214,22 +220,24 @@ header {
 }
 /*menu design*/
 .menu-bar {
-	width: 0%;
-	height: 0vh;
-	padding: 2.0rem 0 0;
+  width: 0%;
+  height: 0vh;
+  padding: 2rem 0 0;
+  border-radius: 0 1.5rem 0 0;
   display: flex;
   visibility: visible;
-	flex-direction: column;
+  flex-direction: column;
   justify-content: start;
   align-items: flex-start;
-	gap: 2.5rem;
-	position: absolute;
-	top: 0;
+  gap: 2.5rem;
+  position: absolute;
+  top: 0;
   left: -3%;
   z-index: 2;
-	transition: 850ms ease-in-out;
-	background-color: var(--accent);
+  transition: 500ms ease-in-out;
+  background-color: var(--accent);
   transform: translate(-100px, 0);
+  box-shadow: -5px 3px 15px 0px white;
 }
 
 .menu-bar {
@@ -251,11 +259,11 @@ header {
 
 .menu-bar > div > a {
   width: fit-content;
-	color: var(--primary);
-	font-size: 1.4rem;
-	font-weight: 400;
-	font-family: var(--inter);
-	text-decoration: none;
+  color: var(--primary);
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: var(--inter);
+  text-decoration: none;
   transition: color 500ms ease-in-out;
 }
 
@@ -365,6 +373,100 @@ header {
 /*quiz page*/
 #quiz-page {
   display: none;
+}
+
+body.flex #welcome-section {
+  display: none;
+}
+
+body.flex #quiz-page {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  background-color: var(--accent);
+  color: var(--primary);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.quiz-page-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.quiz-page-header {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-page-header > button {
+  background-color: transparent;
+  border: 1px solid var(--accent-two);
+  color: var(--primary);
+}
+
+.quiz-question-show {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.question-info {
+  width: 100%;
+  height: fit-content;
+}
+
+.question-img-wrapper {
+  width: 100%;
+  height: 10.0rem;
+}
+
+.question-img-wrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.question-answer-box {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+.options-wrapper {
+  width: 100%;
+  height: 3.5rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.quiz-page-footer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.quiz-page-footer > button {
+  background-color: transparent;
+  border: 1px solid;
+  color: var(--primary);
 }
 
 /*users profile page*/

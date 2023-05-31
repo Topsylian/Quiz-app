@@ -8,6 +8,7 @@ const crossOne = document.querySelector("#cross-one");
 const crossTwo = document.querySelector("#cross-two");
 const usersName = document.querySelector("#users-name");
 const startBtn = document.querySelector("button");
+const backToStartBtn = document.querySelector("button.back-to-start");
 const menuProfile = document.querySelector(".menu-bar > div.menu-profile");
 const menuScore = document.querySelector(".menu-bar > div.menu-total-score");
 
@@ -29,8 +30,8 @@ hamburger.addEventListener("click", () => {
       menuProfile.style.opacity = "1";
       menuScore.style.opacity = "1";
       dropMenu.style.height = "100vh";
-			dropMenu.style.width = "90%";
-			dropMenu.style.transform = "translate(0px, 0px)";
+      dropMenu.style.width = "90%";
+      dropMenu.style.transform = "translate(0px, 0px)";
       crossOne.style.transform = "translate(-8px, -2px) rotate(45deg)";
       crossTwo.style.transform = "translate(-8px, -8px) rotate(-45deg) ";
       //body.style.background = "var(--accent)";
@@ -50,6 +51,10 @@ hamburger.addEventListener("click", () => {
   }
 });
 
+/* making reference to the 3 displays*/
+const welcome = document.querySelector("#welcome-section");
+const quizPage = document.querySelector("#quiz-page");
+
 startBtn.addEventListener("click", function () {
   if (startBtn.getAttribute("class") === "start") {
     startBtn.classList.add("active");
@@ -58,4 +63,20 @@ startBtn.addEventListener("click", function () {
     startBtn.classList.remove("active");
     startBtn.setAttribute("class", "start");
   }
+
+  localStorage.setItem("display", "flex");
+
+  const storedDisplay = localStorage.getItem("display");
+if (storedDisplay === "flex") {
+  body.classList.add(storedDisplay);
+}
+});
+
+if (localStorage.getItem("display") === "flex") {
+  body.classList.add("flex");
+}
+
+backToStartBtn.addEventListener("click", () => {
+  body.classList.remove("flex");
+  localStorage.removeItem("display");
 });
