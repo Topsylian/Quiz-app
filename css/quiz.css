@@ -237,7 +237,6 @@ header {
   transition: 500ms ease-in-out;
   background-color: var(--accent);
   transform: translate(-100px, 0);
-  box-shadow: -5px 3px 15px 0px white;
 }
 
 .menu-bar {
@@ -387,6 +386,7 @@ body.flex #quiz-page {
   color: var(--primary);
   border-radius: 1rem;
   padding: 1rem;
+  padding-bottom: 5.5rem;
 }
 
 .quiz-page-wrapper {
@@ -408,7 +408,7 @@ body.flex #quiz-page {
 .quiz-page-header > button {
   background-color: transparent;
   border: 1px solid var(--accent-two);
-  color: var(--primary);
+  color: var(--accent-two);
 }
 
 .quiz-question-show {
@@ -424,17 +424,6 @@ body.flex #quiz-page {
   height: fit-content;
 }
 
-.question-img-wrapper {
-  width: 100%;
-  height: 10.0rem;
-}
-
-.question-img-wrapper > img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 .question-answer-box {
   width: 100%;
   height: fit-content;
@@ -445,22 +434,22 @@ body.flex #quiz-page {
 
 .options-wrapper {
   width: 100%;
-  height: 3.5rem;
-  border: 1px solid;
+  height: 4.0rem;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
   padding: 0 1.5rem;
+  background-color: var(--secondary);
 }
 
 .quiz-page-footer {
+  padding-top: 2.5rem;
   width: 100%;
   height: fit-content;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3rem;
 }
 
 .quiz-page-footer > button {
