@@ -387,7 +387,7 @@ body.flex #quiz-page {
   background-color: var(--accent);
   color: var(--primary);
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
 .quiz-page-wrapper {
