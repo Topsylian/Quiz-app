@@ -86,7 +86,6 @@ button {
   background-color: var(--primary);
   color: var(--secondary);
   font-family: var(--poppins);
-  transition: 500ms ease-in-out;
 }
 
 main{
@@ -219,6 +218,7 @@ header {
 	height: 0vh;
 	padding: 2.0rem 0 0;
   display: flex;
+  visibility: visible;
 	flex-direction: column;
   justify-content: start;
   align-items: flex-start;
@@ -227,13 +227,13 @@ header {
 	top: 0;
   left: -3%;
   z-index: 2;
-	transition: all 550ms ease-in-out;
+	transition: width 850ms ease-in-out;
 	background-color: var(--accent);
-  transform: translate(0, 0);
+  transform: translate(-100px, 0);
 }
 
 .menu-bar {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 .menu-bar > div {
@@ -242,7 +242,7 @@ header {
   display: flex;
   align-items: center;
   margin-left: 5%;
-  transition: 0ms ease-in;
+  opacity: 1;
 }
 
 .menu-profile {
@@ -256,28 +256,11 @@ header {
 	font-weight: 400;
 	font-family: var(--inter);
 	text-decoration: none;
-  position: relative;
-  transition: 500ms ease-in-out;
-  transform: translate(0px, 0px);
+  transition: color 500ms ease-in-out;
 }
 
 .menu-bar > div > a:hover {
-  transform: translate(.8rem, 0px);
-}
-
-.menu-bar > div > a:hover::before {
-  width: 100%;
-}
-
-.menu-bar > div > a::before {
-  content: "";
-  width: 50%;
-  height: 1px;
-  position: absolute;
-  background-color: var(--primary);
-  bottom: -0.2rem;
-  left: 0;
-  transition: 500ms ease-in-out;
+  color: var(--accent-two);
 }
 
 /*Welcome section design*/
@@ -343,7 +326,7 @@ header {
 */
 .start-btn button::before {
   content: "";
-  width: 50%;
+  width: 52%;
   height: 100%;
   transform: translate(-150%, -150%);
   position: absolute;
@@ -368,7 +351,7 @@ header {
 
 .start-btn button::after {
   content: "";
-  width: 50%;
+  width: 52%;
   height: 100%;
   transform: translate(150%, 150%);
   position: absolute;
