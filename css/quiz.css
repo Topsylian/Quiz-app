@@ -376,12 +376,8 @@ header {
   display: none;
 }
 
-body.flex #welcome-section, body.flex header {
+body.flex #welcome-section {
   display: none;
-}
-
-body.flex main {
-  justify-content: center;
 }
 
 body.flex #quiz-page {
