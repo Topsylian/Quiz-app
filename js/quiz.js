@@ -24,6 +24,7 @@ hamburger.addEventListener("click", () => {
       sticks[i].setAttribute("class", "non-stick");
       dropMenu.style.display = "flex";
       dropMenu.style.visibility = "visible";
+      dropMenu.style.opacity = "1";
       dropMenu.style.height = "100vh";
 			dropMenu.style.width = "90%";
 			dropMenu.style.transform = "translate(0px, 0px)";
@@ -38,7 +39,8 @@ hamburger.addEventListener("click", () => {
       hamburger.classList.remove("click");
       dropMenu.style.visibility = "hidden";
       dropMenu.style.height = "100vh";
-			dropMenu.style.width = "0%";
+      dropMenu.style.width = "0%";
+      dropMenu.style.opacity = "0";
       crossOne.style.transform = "translate(50px, -50px) rotate(45deg)";
       crossTwo.style.transform = "translate(-50px, 50px) rotate(-45deg) ";
       body.style.background = "var(--primary)";

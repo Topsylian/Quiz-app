@@ -227,7 +227,7 @@ header {
 	top: 0;
   left: -3%;
   z-index: 2;
-	transition: width 850ms ease-in-out;
+	transition: 850ms ease-in-out;
 	background-color: var(--accent);
   transform: translate(-100px, 0);
 }
