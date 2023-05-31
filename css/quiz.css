@@ -101,9 +101,10 @@ main {
 header {
   width: 100%;
   height: fit-content;
-  margin-bottom: 0px;
+  margin-bottom: 2.0rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
 }
 
