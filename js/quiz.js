@@ -69,6 +69,7 @@ startBtn.addEventListener("click", function () {
   const storedDisplay = localStorage.getItem("display");
 if (storedDisplay === "flex") {
   body.classList.add(storedDisplay);
+  startBtn.classList.remove("active");
 }
 });
 

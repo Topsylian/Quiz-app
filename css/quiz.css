@@ -144,6 +144,7 @@ header {
 .scoreboard-wrapper p {
   font-size: 1.6rem;
   font-weight: 400;
+  color: var(--secondary);
 }
 
 .scoreboard-wrapper span {
@@ -384,7 +385,7 @@ body.flex #quiz-page {
   display: flex;
   background-color: var(--accent);
   color: var(--primary);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   padding: 1rem;
   padding-bottom: 5.5rem;
 }
@@ -441,6 +442,10 @@ body.flex #quiz-page {
   gap: 1.5rem;
   padding: 0 1.5rem;
   background-color: var(--secondary);
+}
+
+.options-wrapper > p {
+  font-size: 1.4rem;
 }
 
 .quiz-page-footer {
