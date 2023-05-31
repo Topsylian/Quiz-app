@@ -84,5 +84,6 @@ if (localStorage.getItem("display") === "flex") {
 backToStartBtn.addEventListener("click", () => {
   body.classList.remove("flex");
   localStorage.removeItem("display");
+  main.style.justifyContent = "space-between";
   header.style.display = "flex";
 });
