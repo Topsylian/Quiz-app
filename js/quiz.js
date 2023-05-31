@@ -2,6 +2,7 @@
 
 const body = document.querySelector("body");
 const header = document.querySelector(".quiz-header");
+const main = document.querySelector("main");
 const hamburger = document.querySelector(".hamburger-wrapper");
 const dropMenu = document.querySelector(".menu-bar");
 const sticks = document.querySelectorAll("div.stick");
@@ -64,6 +65,7 @@ startBtn.addEventListener("click", function () {
     startBtn.classList.remove("active");
     startBtn.setAttribute("class", "start");
   }
+  main.style.justifyContent = "center";
   header.style.display = "none";
   localStorage.setItem("display", "flex");
 
@@ -76,6 +78,7 @@ if (storedDisplay === "flex") {
 
 if (localStorage.getItem("display") === "flex") {
   body.classList.add("flex");
+
 }
 
 backToStartBtn.addEventListener("click", () => {
