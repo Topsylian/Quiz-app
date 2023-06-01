@@ -390,8 +390,8 @@ body.flex #quiz-page {
   width: 100%;
   height: 70%;
   display: flex;
-  background-color: var(--accent);
-  color: var(--primary);
+  background-color: var(--accent-two);
+  color: var(--accent);
   border-radius: 0.5rem;
   padding: 2rem 1rem;
   opacity: 0;
@@ -421,7 +421,7 @@ body.flex #quiz-page.show {
 .quiz-page-header > button {
   background-color: transparent;
   height: fit-content;
-  color: var(--accent-two);
+  color: var(--accent);
 }
 
 .quiz-question-show {
@@ -457,6 +457,7 @@ body.flex #quiz-page.show {
   align-items: center;
   padding: 0 1.5rem;
   background-color: var(--secondary);
+  color: var(--primary);
   transition: 500ms ease-in-out;
   overflow-x: hidden;
   flex-grow: 2;
@@ -493,6 +494,7 @@ body.flex #quiz-page.show {
 .quiz-page-footer > .back-to-start {
   border: transparent;
   visibility: visible;
+  color: var(--accent);
 }
 
 /*users profile page*/
