@@ -380,6 +380,10 @@ header {
   height: 0;
 }
 
+body.flex {
+  background-color: var(--accent-two);
+}
+
 body.flex #welcome-section {
   display: none;
   height: 0;
