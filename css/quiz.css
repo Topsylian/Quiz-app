@@ -394,8 +394,8 @@ body.flex #quiz-page {
   width: 100%;
   height: 70%;
   display: flex;
-  background-color: var(--accent-two);
-  color: var(--accent);
+  background-color: var(--accent);
+  color: var(--primary);
   border-radius: 0.5rem;
   padding: 2rem 1rem;
   opacity: 0;
@@ -411,7 +411,7 @@ body.flex #quiz-page.show {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 .quiz-page-header {
@@ -420,22 +420,35 @@ body.flex #quiz-page.show {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1.5rem;
 }
 
 .quiz-page-header > button {
   background-color: transparent;
   height: fit-content;
-  color: var(--accent);
+  color: var(--accent-two);
+  justify-content: end;
 }
 
 .quiz-question-show {
   width: 100%;
-  height: 50%;
+  height: fit-content;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
+}
+
+.question-img {
+  width: 100%;
+  height: 100px;
+}
+
+.question-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .question-info {
@@ -456,7 +469,7 @@ body.flex #quiz-page.show {
 .options-wrapper {
   width: 45%;
   height: 3.5rem;
-  border-radius: 5.5rem;
+  border-radius: 0.5rem;
   display: flex;
   align-items: center;
   padding: 0 1.5rem;
@@ -480,11 +493,11 @@ body.flex #quiz-page.show {
 }
 
 .quiz-page-footer {
-  padding-top: 7.5rem;
+  padding-top: 2rem;
   width: 100%;
   height: fit-content;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -492,13 +505,20 @@ body.flex #quiz-page.show {
   background-color: transparent;
   border: 1px solid;
   color: var(--primary);
-  visibility: hidden;
+  visibility: visible;
 }
 
-.quiz-page-footer > .back-to-start {
+.back {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.back > .back-to-start {
   border: transparent;
   visibility: visible;
-  color: var(--accent);
+  color: var(--accent-two);
+  justify-content: center;
 }
 
 /*users profile page*/
