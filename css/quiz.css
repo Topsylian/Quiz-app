@@ -1,5 +1,6 @@
 @import url(./style.css);
 @import url(./quiz.css);
+@import url(./animation.css);
 
 *,
 ::before,
@@ -101,7 +102,7 @@ body main {
 header {
   width: 100%;
   height: fit-content;
-  margin-bottom: 1.0rem;
+  margin-bottom: 0rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -278,6 +279,7 @@ header {
   height: 80vh;
   display: flex;
   flex-direction: column;
+  transition: display 500ms ease-in-out;
 }
 
 .welcome-greeting {
@@ -374,20 +376,30 @@ header {
 /*quiz page*/
 #quiz-page {
   display: none;
+  opacity: 0;
+  height: 0;
 }
 
 body.flex #welcome-section {
   display: none;
+  height: 0;
+  width: 0;
 }
 
 body.flex #quiz-page {
-  width: 100%;
-  height: fit-content;
+  width: 0%;
+  height: 0%;
   display: flex;
   background-color: var(--accent);
   color: var(--primary);
   border-radius: 0.5rem;
   padding: 2rem 1rem;
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
+body.flex #quiz-page.show {
+  opacity: 1;
 }
 
 .quiz-page-wrapper {
@@ -414,10 +426,12 @@ body.flex #quiz-page {
 
 .quiz-question-show {
   width: 100%;
-  height: fit-content;
+  height: 50%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 1.5rem;
 }
 
 .question-info {
@@ -430,19 +444,23 @@ body.flex #quiz-page {
   height: fit-content;
   display: flex;
   gap: 1.5rem;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .options-wrapper {
-  width: 100%;
-  height: 4.0rem;
-  border-radius: 0.5rem;
+  width: 45%;
+  height: 3.5rem;
+  border-radius: 5.5rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
   padding: 0 1.5rem;
   background-color: var(--secondary);
   transition: 500ms ease-in-out;
+  overflow-x: hidden;
+  flex-grow: 2;
+  text-align: center;
 }
 
 .options-wrapper:hover {
@@ -450,6 +468,8 @@ body.flex #quiz-page {
 }
 
 .options-wrapper > p {
+  width: 100%;
+  text-align: center;
   font-size: 1.4rem;
 }
 

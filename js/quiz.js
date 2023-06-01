@@ -66,19 +66,34 @@ startBtn.addEventListener("click", function () {
     startBtn.setAttribute("class", "start");
   }
   localStorage.setItem("display", "flex");
+  localStorage.setItem("Show", "show");
 
   const storedDisplay = localStorage.getItem("display");
-if (storedDisplay === "flex") {
-  body.classList.add(storedDisplay);
-  startBtn.classList.remove("active");
-}
+  if (storedDisplay === "flex") {
+    body.classList.add(storedDisplay);
+    startBtn.classList.remove("active");
+  }
+
+  setTimeout(() => {
+    quizPage.style.width = "100%";
+    quizPage.style.height = "70%";
+    quizPage.classList.add("show");
+  }, 500);
 });
 
 if (localStorage.getItem("display") === "flex") {
   body.classList.add("flex");
+  setTimeout(() => {
+    quizPage.style.width = "100%";
+    quizPage.style.height = "70%";
+    quizPage.classList.add(localStorage.getItem("Show"));
+  }, 100);
 }
 
 backToStartBtn.addEventListener("click", () => {
   body.classList.remove("flex");
+  quizPage.classList.remove("show");
+  quizPage.style.width = "0%";
+  quizPage.style.height = "0%";
   localStorage.removeItem("display");
 });

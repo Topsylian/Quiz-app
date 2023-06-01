@@ -25,3 +25,13 @@
 		border-image: linear-gradient(360deg, orange, var(--accent-two), var(--primary)) 10 stretch;
 	}
 }
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
