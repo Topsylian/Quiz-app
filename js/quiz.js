@@ -75,25 +75,19 @@ startBtn.addEventListener("click", function () {
   }
 
   setTimeout(() => {
-    quizPage.style.width = "100%";
-    quizPage.style.height = "70%";
     quizPage.classList.add("show");
-  }, 500);
+  }, 300);
 });
 
 if (localStorage.getItem("display") === "flex") {
   body.classList.add("flex");
   setTimeout(() => {
-    quizPage.style.width = "100%";
-    quizPage.style.height = "70%";
     quizPage.classList.add(localStorage.getItem("Show"));
-  }, 100);
+  }, 300);
 }
 
 backToStartBtn.addEventListener("click", () => {
   body.classList.remove("flex");
   quizPage.classList.remove("show");
-  quizPage.style.width = "0%";
-  quizPage.style.height = "0%";
   localStorage.removeItem("display");
 });

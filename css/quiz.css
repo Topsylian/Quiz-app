@@ -387,8 +387,8 @@ body.flex #welcome-section {
 }
 
 body.flex #quiz-page {
-  width: 0%;
-  height: 0%;
+  width: 100%;
+  height: 70%;
   display: flex;
   background-color: var(--accent);
   color: var(--primary);
@@ -465,6 +465,7 @@ body.flex #quiz-page.show {
 
 .options-wrapper:hover {
   background-color: var(--accent-two);
+  color: var(--accent);
 }
 
 .options-wrapper > p {
@@ -486,10 +487,12 @@ body.flex #quiz-page.show {
   background-color: transparent;
   border: 1px solid;
   color: var(--primary);
+  visibility: hidden;
 }
 
 .quiz-page-footer > .back-to-start {
   border: transparent;
+  visibility: visible;
 }
 
 /*users profile page*/
