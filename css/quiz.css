@@ -392,7 +392,7 @@ body.flex #welcome-section {
 
 body.flex #quiz-page {
   width: 100%;
-  height: fit-content;
+  height: 73.6rem;
   display: flex;
   background-color: var(--accent);
   color: var(--primary);
