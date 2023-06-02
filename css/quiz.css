@@ -392,7 +392,7 @@ body.flex #welcome-section {
 
 body.flex #quiz-page {
   width: 100%;
-  height: 70%;
+  height: 80%;
   display: flex;
   background-color: var(--accent);
   color: var(--primary);
@@ -411,7 +411,6 @@ body.flex #quiz-page.show {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 .quiz-page-header {
@@ -442,13 +441,14 @@ body.flex #quiz-page.show {
 
 .question-img {
   width: 100%;
-  height: 100px;
+  height: 200px;
 }
 
 .question-img > img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 1.0rem;
 }
 
 .question-info {
@@ -464,6 +464,7 @@ body.flex #quiz-page.show {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 2rem;
 }
 
 .options-wrapper {
@@ -476,7 +477,6 @@ body.flex #quiz-page.show {
   background-color: var(--secondary);
   color: var(--primary);
   transition: 500ms ease-in-out;
-  overflow-x: hidden;
   flex-grow: 2;
   text-align: center;
 }
@@ -493,11 +493,11 @@ body.flex #quiz-page.show {
 }
 
 .quiz-page-footer {
-  padding-top: 2rem;
+  padding: 4rem 1.5rem 0rem;
   width: 100%;
   height: fit-content;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -514,7 +514,7 @@ body.flex #quiz-page.show {
   justify-content: end;
 }
 
-.back > .back-to-start {
+.quiz-page-footer > .back-to-start {
   border: transparent;
   visibility: visible;
   color: var(--accent-two);
