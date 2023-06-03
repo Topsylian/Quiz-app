@@ -455,6 +455,7 @@ body.flex #quiz-page.show {
 .question-info {
   width: 100%;
   height: fit-content;
+  font-family: var(--inter);
 }
 
 .question-answer-box {
@@ -482,15 +483,45 @@ body.flex #quiz-page.show {
   text-align: center;
 }
 
-.options-wrapper:hover {
+.button {
+  width: 45%;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  background-color: var(--secondary);
+  color: var(--primary);
+  transition: 500ms ease-in-out;
+  flex-grow: 2;
+  text-align: center;
+}
+
+.button:hover:not([disabled]) {
   background-color: var(--accent-two);
   color: var(--accent);
 }
 
-.options-wrapper > p {
-  width: 100%;
-  text-align: center;
-  font-size: 1.4rem;
+
+/*
+.options-wrapper:disabled {
+  background-color: var(--accent-two);
+  color: var(--accent);
+  cursor: no-drop;
+}
+*/
+
+.options-wrapper:hover:not([disabled]) {
+  background-color: var(--accent-two);
+  color: var(--accent);
+}
+
+.right {
+  background-color: var(--form-valid);
+}
+
+.wrong {
+  background-color: var(--form-error);
 }
 
 .quiz-page-footer {

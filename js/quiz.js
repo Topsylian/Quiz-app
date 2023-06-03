@@ -91,3 +91,145 @@ backToStartBtn.addEventListener("click", () => {
   quizPage.classList.remove("show");
   localStorage.removeItem("display");
 });
+
+const questionData = [
+  {
+    question: "What's my name",
+    options: [
+      { text: "william", correct: false },
+      { text: "raihana", correct: true },
+      { text: "charles", correct: false },
+      { text: "toyyib", correct: false },
+    ],
+  },
+
+  {
+    question: "What is the largest organ in the human body",
+    options: [
+      { text: "liver", correct: false },
+      { text: "skin", correct: true },
+      { text: "kidney", correct: false },
+      { text: "bladder", correct: false },
+    ],
+  },
+];
+
+//select section that show question
+const questionBox = document.querySelector(".question-info");
+//select the section that holds answers
+const answerBoxes = document.querySelector(".question-answer-box");
+//select the next button
+const nextButton = document.querySelector(".next");
+//question box textContent should equal to first questionData object property
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function quizStart() {
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.textContent = "Next";
+  showQuestion();
+}
+
+function showQuestion() {
+  resetQuestion();
+  let currentQuestion = questionData[currentQuestionIndex];
+  let numberOfQuestion = currentQuestionIndex + 1;
+  questionBox.textContent = `${numberOfQuestion} . ${currentQuestion.question}?`;
+
+  let answers = currentQuestion.options;
+  answers.forEach(function (answer) {
+    const btn = document.createElement("button");
+    btn.textContent = answer.text;
+    btn.classList.add("button");
+    answerBoxes.appendChild(btn);
+    if (answer.correct) {
+      btn.dataset.correct = answer.correct;
+      console.log(answer.correct.toString());
+    }
+    btn.addEventListener("click", (e)=> {
+      const choseAnswer = e.target;
+      const isTrue = choseAnswer.dataset.correct === "true";
+      if (isTrue) {
+        choseAnswer.classList.add("right");
+      } else {
+        choseAnswer.classList.add("wrong");
+      }
+
+      Array.from(answerBoxes.children).forEach((btn) => {
+        const isTrueAnswer = btn.dataset.correct === "true";
+        if (isTrueAnswer) {
+          btn.classList.add("right");
+        }
+        btn.disabled = true;
+        nextButton.style.display = "flex";
+      });
+    });
+  });
+}
+
+function resetQuestion() {
+  nextButton.style.display = "none";
+  while (answerBoxes.firstChild) {
+    answerBoxes.removeChild(answerBoxes.firstChild);
+  }
+}
+
+quizStart();
+/*
+//this variable keeps all option values
+const optData = questionData[0].options;
+
+
+let addCon = answerBoxes.forEach((option, length) => {
+  const firstL = optData[length].charAt(0).toUpperCase();
+  const otherL = optData[length].slice(1).toLowerCase();
+  option.textContent = `${firstL}${otherL}`;
+  option.addEventListener("click", (e) => {
+    const currentAnswer = e.target;
+
+    if (currentAnswer.textContent === "Toyyib") {
+      answerBoxes[length].style.backgroundColor = "var(--form-valid)";
+    } else {
+      answerBoxes[length].style.backgroundColor = "var(--form-error)";
+    }
+  });
+});
+
+
+
+/*
+let count = 0;
+function random() {
+  return Math.floor(Math.random() * 4);
+}
+
+const randomIndex = Math.floor(Math.random() * jsonData.length);
+
+console.log(randomIndex, random(), random());
+
+//question reference
+const questionBox = document.querySelector(".question-info > p");
+const optOne = document.querySelector(".answer-one");
+const optTwo = document.querySelector(".answer-two");
+const optThree = document.querySelector(".answer-three");
+const optFour = document.querySelector(".answer-four");
+
+const example = jsonData[randomIndex]["question"];
+
+questionBox.textContent = example;
+let index = 1;
+*/
+/*if (jsonData[0].question) {
+  optOne.textContent = jsonData[0].options[random()].toUpperCase();
+  optTwo.textContent = jsonData[0].options[random()].toUpperCase();
+  optThree.textContent = jsonData[0].options[3];
+  optFour.textContent = jsonData[0].options[random()].toUpperCase();
+  console.log("yeaaaaaaaa");
+} else {
+  console.log("Error");
+}
+*/
+
+//optOne.textContent = jsonData[0].options[optionIndex];
