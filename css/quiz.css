@@ -527,7 +527,7 @@ body.flex #quiz-page.show {
   background-color: var(--form-valid);
 }
 
-.wrong {
+.wrong{
   background-color: var(--form-error);
 }
 

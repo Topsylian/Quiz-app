@@ -113,7 +113,7 @@ const questionData = [
       { text: "Bladder", correct: false },
     ],
   },
-/*
+
   {
     question: "Which continent is home to the Sahara Desert",
     options: [
@@ -193,7 +193,6 @@ const questionData = [
       { text: "Texas", correct: false },
     ],
   },
-  */
 ];
 
 //select section that show question
@@ -209,8 +208,6 @@ const questionImg = document.querySelector(".question-img");
 const totalQuestionData = document.querySelector(".total-score");
 const totalQuestionAnsweredByUser = document.querySelector(".users-score");
 
-localStorage.setItem("totalQuestionData", 3);
-let index = localStorage.getItem("totalQuestionData");
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -218,9 +215,9 @@ function quizStart() {
   currentQuestionIndex = 0;
   score = 0;
   nextButton.textContent = "Next";
-  questionImg.style.display = 'flex';
-  questionBox.style.display = 'flex';
-  questionHeader.style.display = 'flex';
+  questionImg.style.display = "flex";
+  questionBox.style.display = "flex";
+  questionHeader.style.display = "flex";
   showQuestion();
 }
 
@@ -230,6 +227,7 @@ function showQuestion() {
   let numberOfQuestion = currentQuestionIndex + 1;
   questionBox.textContent = `${numberOfQuestion} . ${currentQuestion.question}?`;
   totalQuestionAnsweredByUser.textContent = currentQuestionIndex + 1;
+  totalQuestionData.textContent = questionData.length;
 
   let answers = currentQuestion.options;
   answers.forEach(function (answer) {
@@ -240,14 +238,18 @@ function showQuestion() {
     if (answer.correct) {
       btn.dataset.correct = answer.correct;
     }
-    btn.addEventListener("click", (e)=> {
+    btn.addEventListener("click", (e) => {
       const choseAnswer = e.target;
       const isTrue = choseAnswer.dataset.correct === "true";
+      localStorage.setItem("correct", "right");
+      localStorage.setItem("incorrect", "wrong");
+      let right = localStorage.getItem("correct");
+      let wrong = localStorage.getItem("incorrect");
       if (isTrue) {
-        choseAnswer.classList.add("right");
+        choseAnswer.classList.add(right);
         score++;
       } else {
-        choseAnswer.classList.add("wrong");
+        choseAnswer.classList.add(wrong);
       }
 
       Array.from(answerBoxes.children).forEach((btn) => {
@@ -272,11 +274,11 @@ function resetQuestion() {
 function revealScore() {
   resetQuestion();
   answerBoxes.innerHTML = `Bravo! You scored ${score} points out of ${currentQuestionIndex} questions`;
-  nextButton.style.display = 'flex';
+  nextButton.style.display = "flex";
   nextButton.textContent = "Try again!";
-  questionImg.style.display = 'none';
-  questionBox.style.display = 'none';
-  questionHeader.style.display = 'none';
+  questionImg.style.display = "none";
+  questionBox.style.display = "none";
+  questionHeader.style.display = "none";
 }
 
 function nextQuestion() {
@@ -295,6 +297,6 @@ nextButton.addEventListener("click", () => {
   } else {
     quizStart();
   }
-})
+});
 
 quizStart();
