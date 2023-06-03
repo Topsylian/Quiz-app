@@ -90,6 +90,7 @@ backToStartBtn.addEventListener("click", () => {
   body.classList.remove("flex");
   quizPage.classList.remove("show");
   localStorage.removeItem("display");
+  totalQuestionAnsweredByUser.textContent = 1;
 });
 
 const questionData = [
@@ -112,6 +113,86 @@ const questionData = [
       { text: "bladder", correct: false },
     ],
   },
+
+  {
+    question: "Which continent is home to the Sahara Desert",
+    options: [
+      { text: "Europe", correct: false },
+      { text: "Asia", correct: false },
+      { text: "Africa", correct: true },
+      { text: "North America", correct: false },
+    ],
+  },
+
+  {
+    question: "Which river is the longest in the world",
+    options: [
+      { text: "Nile", correct: true },
+      { text: "Niger", correct: false },
+      { text: "Volga", correct: false },
+      { text: "Mississippi-Missouri", correct: false },
+    ],
+  },
+
+  {
+    question: "Which country is home to the Taj Mahal",
+    options: [
+      { text: "Morocco", correct: false },
+      { text: "India", correct: true },
+      { text: "China", correct: false },
+      { text: "Kenya", correct: false },
+    ],
+  },
+
+  {
+    question: "What is the capital of Canada? ",
+    options: [
+      { text: "Barcelona", correct: false },
+      { text: "Capetown", correct: false },
+      { text: "Ontario", correct: false },
+      { text: "Ottawa", correct: true },
+    ],
+  },
+
+  {
+    question: " What is the highest mountain in Africa",
+    options: [
+      { text: "Mount Everest", correct: false },
+      { text: "Mount Kilimanjaro", correct: true },
+      { text: "Zuma Rock", correct: false },
+      { text: "Mount Tur", correct: false },
+    ],
+  },
+
+  {
+    question: "Who created the character of Sherlock Holmes",
+    options: [
+      { text: "Arthur Conan Doyle", correct: true },
+      { text: "Bruce Willis", correct: false },
+      { text: "William shakespeare", correct: false },
+      { text: "Harper Lee", correct: false },
+    ],
+  },
+
+  {
+    question: "What is the largest country in the world by area",
+    options: [
+      { text: "Russia", correct: true },
+      { text: "Egypt", correct: false },
+      { text: "USA", correct: false },
+      { text: "New Zealand", correct: false },
+    ],
+  },
+
+  {
+    question: "What is the capital of Australia",
+    options: [
+      { text: "Madrid", correct: false },
+      { text: "California", correct: false },
+      { text: "Canberra", correct: true },
+      { text: "Texas", correct: false },
+    ],
+  },
 ];
 
 //select section that show question
@@ -121,7 +202,13 @@ const answerBoxes = document.querySelector(".question-answer-box");
 //select the next button
 const nextButton = document.querySelector(".next");
 //question box textContent should equal to first questionData object property
+const questionImg = document.querySelector(".question-img");
 
+const totalQuestionData = document.querySelector(".total-score");
+const totalQuestionAnsweredByUser = document.querySelector(".users-score");
+
+localStorage.setItem("totalQuestionData", 3);
+let index = localStorage.getItem("totalQuestionData");
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -137,6 +224,7 @@ function showQuestion() {
   let currentQuestion = questionData[currentQuestionIndex];
   let numberOfQuestion = currentQuestionIndex + 1;
   questionBox.textContent = `${numberOfQuestion} . ${currentQuestion.question}?`;
+  totalQuestionAnsweredByUser.textContent = currentQuestionIndex + 1;
 
   let answers = currentQuestion.options;
   answers.forEach(function (answer) {
@@ -153,6 +241,7 @@ function showQuestion() {
       const isTrue = choseAnswer.dataset.correct === "true";
       if (isTrue) {
         choseAnswer.classList.add("right");
+        score++;
       } else {
         choseAnswer.classList.add("wrong");
       }
@@ -176,60 +265,32 @@ function resetQuestion() {
   }
 }
 
+function revealScore() {
+  resetQuestion();
+  answerBoxes.innerHTML = `You scored ${score} points out of ${currentQuestionIndex}`;
+  nextButton.style.display = 'flex';
+  nextButton.textContent = "Try again!";
+  questionImg.style.display = 'none';
+}
+
+function nextQuestion() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questionData.length) {
+    showQuestion();
+    questionImg.style.display = 'flex';
+  } else {
+    revealScore();
+    questionImg.style.display = 'none';
+  }
+}
+
+nextButton.addEventListener("click", () => {
+  const isTrue = currentQuestionIndex < questionData.length;
+  if (isTrue) {
+    nextQuestion();
+  } else {
+    quizStart();
+  }
+})
+
 quizStart();
-/*
-//this variable keeps all option values
-const optData = questionData[0].options;
-
-
-let addCon = answerBoxes.forEach((option, length) => {
-  const firstL = optData[length].charAt(0).toUpperCase();
-  const otherL = optData[length].slice(1).toLowerCase();
-  option.textContent = `${firstL}${otherL}`;
-  option.addEventListener("click", (e) => {
-    const currentAnswer = e.target;
-
-    if (currentAnswer.textContent === "Toyyib") {
-      answerBoxes[length].style.backgroundColor = "var(--form-valid)";
-    } else {
-      answerBoxes[length].style.backgroundColor = "var(--form-error)";
-    }
-  });
-});
-
-
-
-/*
-let count = 0;
-function random() {
-  return Math.floor(Math.random() * 4);
-}
-
-const randomIndex = Math.floor(Math.random() * jsonData.length);
-
-console.log(randomIndex, random(), random());
-
-//question reference
-const questionBox = document.querySelector(".question-info > p");
-const optOne = document.querySelector(".answer-one");
-const optTwo = document.querySelector(".answer-two");
-const optThree = document.querySelector(".answer-three");
-const optFour = document.querySelector(".answer-four");
-
-const example = jsonData[randomIndex]["question"];
-
-questionBox.textContent = example;
-let index = 1;
-*/
-/*if (jsonData[0].question) {
-  optOne.textContent = jsonData[0].options[random()].toUpperCase();
-  optTwo.textContent = jsonData[0].options[random()].toUpperCase();
-  optThree.textContent = jsonData[0].options[3];
-  optFour.textContent = jsonData[0].options[random()].toUpperCase();
-  console.log("yeaaaaaaaa");
-} else {
-  console.log("Error");
-}
-*/
-
-//optOne.textContent = jsonData[0].options[optionIndex];
