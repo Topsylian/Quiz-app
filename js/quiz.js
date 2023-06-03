@@ -97,23 +97,23 @@ const questionData = [
   {
     question: "What's my name",
     options: [
-      { text: "william", correct: false },
-      { text: "raihana", correct: true },
-      { text: "charles", correct: false },
-      { text: "toyyib", correct: false },
+      { text: "William", correct: false },
+      { text: "Raihana", correct: true },
+      { text: "Charles", correct: false },
+      { text: "Toyyib", correct: false },
     ],
   },
 
   {
     question: "What is the largest organ in the human body",
     options: [
-      { text: "liver", correct: false },
-      { text: "skin", correct: true },
-      { text: "kidney", correct: false },
-      { text: "bladder", correct: false },
+      { text: "Liver", correct: false },
+      { text: "Skin", correct: true },
+      { text: "Kidney", correct: false },
+      { text: "Bladder", correct: false },
     ],
   },
-
+/*
   {
     question: "Which continent is home to the Sahara Desert",
     options: [
@@ -130,7 +130,7 @@ const questionData = [
       { text: "Nile", correct: true },
       { text: "Niger", correct: false },
       { text: "Volga", correct: false },
-      { text: "Mississippi-Missouri", correct: false },
+      { text: "Mississippi", correct: false },
     ],
   },
 
@@ -145,7 +145,7 @@ const questionData = [
   },
 
   {
-    question: "What is the capital of Canada? ",
+    question: "What is the capital of Canada ",
     options: [
       { text: "Barcelona", correct: false },
       { text: "Capetown", correct: false },
@@ -157,8 +157,8 @@ const questionData = [
   {
     question: " What is the highest mountain in Africa",
     options: [
-      { text: "Mount Everest", correct: false },
-      { text: "Mount Kilimanjaro", correct: true },
+      { text: "Everest", correct: false },
+      { text: "Kilimanjaro", correct: true },
       { text: "Zuma Rock", correct: false },
       { text: "Mount Tur", correct: false },
     ],
@@ -193,6 +193,7 @@ const questionData = [
       { text: "Texas", correct: false },
     ],
   },
+  */
 ];
 
 //select section that show question
@@ -202,6 +203,7 @@ const answerBoxes = document.querySelector(".question-answer-box");
 //select the next button
 const nextButton = document.querySelector(".next");
 //question box textContent should equal to first questionData object property
+const questionHeader = document.querySelector(".quiz-page-header");
 const questionImg = document.querySelector(".question-img");
 
 const totalQuestionData = document.querySelector(".total-score");
@@ -234,7 +236,6 @@ function showQuestion() {
     answerBoxes.appendChild(btn);
     if (answer.correct) {
       btn.dataset.correct = answer.correct;
-      console.log(answer.correct.toString());
     }
     btn.addEventListener("click", (e)=> {
       const choseAnswer = e.target;
@@ -267,20 +268,20 @@ function resetQuestion() {
 
 function revealScore() {
   resetQuestion();
-  answerBoxes.innerHTML = `You scored ${score} points out of ${currentQuestionIndex}`;
+  answerBoxes.innerHTML = `You scored ${score} points out of ${currentQuestionIndex} questions`;
   nextButton.style.display = 'flex';
   nextButton.textContent = "Try again!";
   questionImg.style.display = 'none';
+  questionBox.style.display = 'none';
+  questionHeader.style.display = 'none';
 }
 
 function nextQuestion() {
   currentQuestionIndex++;
   if (currentQuestionIndex < questionData.length) {
     showQuestion();
-    questionImg.style.display = 'flex';
   } else {
     revealScore();
-    questionImg.style.display = 'none';
   }
 }
 
@@ -288,8 +289,10 @@ nextButton.addEventListener("click", () => {
   const isTrue = currentQuestionIndex < questionData.length;
   if (isTrue) {
     nextQuestion();
+    questionImg.style.display = "flex";
   } else {
     quizStart();
+    questionImg.style.display = 'none';
   }
 })
 
