@@ -218,6 +218,9 @@ function quizStart() {
   currentQuestionIndex = 0;
   score = 0;
   nextButton.textContent = "Next";
+  questionImg.style.display = 'flex';
+  questionBox.style.display = 'flex';
+  questionHeader.style.display = 'flex';
   showQuestion();
 }
 
@@ -268,7 +271,7 @@ function resetQuestion() {
 
 function revealScore() {
   resetQuestion();
-  answerBoxes.innerHTML = `You scored ${score} points out of ${currentQuestionIndex} questions`;
+  answerBoxes.innerHTML = `Bravo! You scored ${score} points out of ${currentQuestionIndex} questions`;
   nextButton.style.display = 'flex';
   nextButton.textContent = "Try again!";
   questionImg.style.display = 'none';
@@ -289,10 +292,8 @@ nextButton.addEventListener("click", () => {
   const isTrue = currentQuestionIndex < questionData.length;
   if (isTrue) {
     nextQuestion();
-    questionImg.style.display = "flex";
   } else {
     quizStart();
-    questionImg.style.display = 'none';
   }
 })
 
